@@ -1,0 +1,16 @@
+name: run
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Horusec
+        id: run_horusec
+        uses: fike/horusec-action@v0.1
+        with:
+          arguments: --config-file-path=horusec-config.json
