@@ -1,0 +1,2 @@
+- name: Horusec
+  uses: fike/horusec-action@v0.2.2
