@@ -16,7 +16,7 @@ jobs:
         dotnet-version: 5.x # Use a versão do .NET que você precisa
 
     - name: Build do Projeto
-      run: dotnet build --configuration Release
+      run: dotnet build
 
     - name: Análise com Roslynator
       run: dotnet roslynator analyze --fix
