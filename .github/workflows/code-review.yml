@@ -1,4 +1,4 @@
-name: Run Roslynator
+name: Análise de Código C#
 
 on: [push]
 
@@ -7,5 +7,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    - name: Setup do .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.x # Use a versão do .NET que você precisa
+
+    - name: Build do Projeto
+      run: dotnet build --configuration Release
+
     - name: Análise com Roslynator
       run: dotnet roslynator analyze --fix
+
+    - name: Commit das correções
+      run: git commit -a -m "Correções de código com Roslynator" || true
+
+    - name: Push das correções
+      run: git push origin main
