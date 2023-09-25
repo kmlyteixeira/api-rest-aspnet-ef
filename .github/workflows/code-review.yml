@@ -13,7 +13,7 @@ jobs:
     - name: Setup do .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 7
+        dotnet-version: 1.2.*
 
     - name: Build do Projeto
       run: dotnet build
