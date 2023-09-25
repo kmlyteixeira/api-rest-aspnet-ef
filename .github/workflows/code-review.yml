@@ -13,7 +13,7 @@ jobs:
     - name: Setup do .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.x # Use a versão do .NET que você precisa
+        dotnet-version: 7
 
     - name: Build do Projeto
       run: dotnet build
